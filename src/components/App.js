@@ -1,26 +1,21 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
-
-const PageOne = () => {
-	return <div className='PageOne'>Page One</div>;
-};
-
-const PageTwo = () => {
-	return (
-		<div className='PageTwo'>
-			Page Two
-			<button>click me</button>
-		</div>
-	);
-};
+import { BrowserRouter, Route, Link } from 'react-router-dom';
+import StreamCreate from './streams/StreamCreate';
+import StreamList from './streams/StreamList';
+import StreamEdit from './streams/StreamEdit';
+import StreamShow from './streams/StreamShow';
+import StreamDelete from './streams/StreamDelete';
 
 function App () {
 	return (
 		<div className='app'>
 			<BrowserRouter>
 				<div>
-					<Route path='/' exact component={PageOne} />
-					<Route path='/pagetwo' component={PageTwo} />
+					<Route path='/' exact component={StreamList} />
+					<Route path='/streams/new' exact component={StreamCreate} />
+					<Route path='/streams/edit' exact component={StreamEdit} />
+					<Route path='/streams/show' exact component={StreamShow} />
+					<Route path='/streams/delete' exact component={StreamDelete} />
 				</div>
 			</BrowserRouter>
 		</div>
