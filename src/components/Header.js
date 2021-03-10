@@ -6,7 +6,7 @@ export default function Header () {
 	return (
 		<div className='ui secondary pointing menu'>
 			<Link to='/' className='item'>
-				streamer
+				screenSTREAM
 			</Link>
 			<div className='right menu'>
 				<Link to='/' className='item'>
