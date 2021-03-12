@@ -1,25 +1,30 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchStream, editStream } from '../../actions';
+import { useHistory } from 'react-router-dom';
 import StreamForm from './StreamForm';
 
 const StreamEdit = (props) => {
+	const history = useHistory();
+	const streamId = props.match.params.id;
 	React.useEffect(
 		() => {
-			props.fetchStream(props.match.params.id);
+			props.fetchStream(streamId);
 			console.log('useeffect used');
 		},
 		[ props.stream.title ]
 	);
 	const onSubmit = (formValues) => {
-		console.log(formValues);
+		props.editStream(streamId, formValues);
+		history.push('/');
 	};
 	return (
 		<div className=''>
 			<h3>edit a stream</h3>
 			<StreamForm
 				onSubmit={onSubmit}
-				initialValues={{ title: props.stream.title, description: props.stream.description }}
+				// initialValues={{ title: props.stream.title, description: props.stream.description }}
+				initialValues={props.stream}
 			/>
 		</div>
 	);
