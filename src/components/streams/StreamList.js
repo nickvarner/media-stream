@@ -7,8 +7,9 @@ const StreamList = (props) => {
 	React.useEffect(
 		() => {
 			props.fetchStreams();
+			console.log('useeffect fetched');
 		},
-		[ props ]
+		[ props.streams.length ]
 	);
 	const renderAdmin = (stream) => {
 		if (props.currentUserId === stream.userId) {
