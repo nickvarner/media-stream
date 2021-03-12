@@ -4,9 +4,12 @@ import { connect } from 'react-redux';
 import { fetchStreams } from '../../actions';
 
 const StreamList = (props) => {
-	React.useEffect(() => {
-		props.fetchStreams();
-	}, []);
+	React.useEffect(
+		() => {
+			props.fetchStreams();
+		},
+		[ props ]
+	);
 	const renderAdmin = (stream) => {
 		if (props.currentUserId === stream.userId) {
 			return (

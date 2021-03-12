@@ -3,9 +3,12 @@ import { connect } from 'react-redux';
 import { fetchStream } from '../../actions';
 
 const StreamEdit = (props) => {
-	React.useEffect(() => {
-		props.fetchStream(props.match.params.id);
-	}, []);
+	React.useEffect(
+		() => {
+			props.fetchStream(props.match.params.id);
+		},
+		[ props ]
+	);
 	return <div className=''>{props.stream.title}</div>;
 };
 
