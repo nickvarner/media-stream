@@ -1,9 +1,7 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { useHistory } from 'react-router-dom';
 
 const StreamForm = (props) => {
-	const history = useHistory();
 	const renderError = ({ error, touched }) => {
 		if (touched && error) {
 			return (
@@ -27,7 +25,6 @@ const StreamForm = (props) => {
 	};
 	const onSubmit = (formValues) => {
 		props.onSubmit(formValues);
-		history.push('/');
 	};
 	return (
 		<form onSubmit={props.handleSubmit(onSubmit)} className='ui form error'>
