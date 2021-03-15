@@ -10,7 +10,7 @@ const StreamEdit = (props) => {
 	React.useEffect(
 		() => {
 			props.fetchStream(streamId);
-			console.log('useeffect used');
+			console.log('streamedit useeffect used');
 		},
 		[ props.stream.title ]
 	);

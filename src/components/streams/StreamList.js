@@ -7,7 +7,7 @@ const StreamList = (props) => {
 	React.useEffect(
 		() => {
 			props.fetchStreams();
-			console.log('useeffect fetched');
+			console.log('streamlist useeffect fetched');
 		},
 		[ props.streams.length ]
 	);
@@ -18,7 +18,7 @@ const StreamList = (props) => {
 					<Link to={`/streams/edit/${stream.id}`} className='ui button primary'>
 						edit
 					</Link>
-					<Link to={'/streams/delete'} className='ui button negative'>
+					<Link to={`/streams/delete/${stream.id}`} className='ui button negative'>
 						delete
 					</Link>
 				</div>
