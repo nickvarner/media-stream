@@ -11,7 +11,7 @@ const StreamCreate = (props) => {
 		history.push('/');
 	};
 	return (
-		<div className=''>
+		<div>
 			<h3>create a stream</h3>
 			<StreamForm onSubmit={onSubmit} />
 		</div>

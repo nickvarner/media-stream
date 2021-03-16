@@ -5,17 +5,18 @@ import { fetchStream, deleteStream } from '../../actions';
 import { useHistory } from 'react-router-dom';
 
 const StreamDelete = (props) => {
+	const id = props.match.params.id;
 	React.useEffect(() => {
 		console.log(props);
 		console.log('streamdelete useeffect');
-		props.fetchStream(props.match.params.id);
+		props.fetchStream(id);
 	}, []);
 	const history = useHistory();
 	const onDismiss = () => {
 		history.push('/');
 	};
 	const handleDelete = () => {
-		props.deleteStream(props.match.params.id);
+		props.deleteStream(id);
 		history.push('/');
 	};
 	const renderActions = () => {
